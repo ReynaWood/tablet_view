@@ -1,0 +1,245 @@
+body{
+    color:black;
+    background-color:#fffc72;
+    padding-bottom:50px;
+    font-family: 'Nunito', sans-serif;
+    font-weight:200;
+    /* credit to the artists of Celeste */
+    background-image: url("../images/celeste_golden_ridge.png");
+    background-position: top;
+    background-repeat: no-repeat;
+
+}
+body div {
+    background-color:white;
+    padding: 30px;
+    margin: 30px;
+    border: 3px solid black;
+    border-radius: 25px;
+}
+body nav div{
+    background-color: transparent;
+}
+h1{
+    font-size: 40px;
+    text-align: center;
+    /* background-image: url("../images/celesteblock.gif"); */
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 25px;
+    font-family: 'Young Serif', serif;}
+
+h2{
+    font-size: 30px;
+    text-align: center;
+    color: #912d25;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: bold;
+}
+
+h3{
+    font-size: 25px;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    color:#57505c;
+    font-weight: bold;
+    padding:30px;
+}
+
+p{
+    line-height: 30px;
+}
+
+nav div{
+    /* border: 1px black solid; */
+    padding: 10px;
+    margin: 10px;
+}
+
+nav{
+    position:fixed;
+    bottom:0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    left: 0;
+    /* background: rgb(248,230,255);
+    background: linear-gradient(0deg, rgba(248,230,255,1) 15%, rgba(191,216,254,1) 85%); */
+    /* background-color: black; */
+    /* credit to the artists of Celeste */
+    background-image:url("../images/celeste_background.jpeg");
+    background-size: cover;
+    filter:brightness(200%);
+}
+
+nav a{
+    background-color: white;
+    padding:5px;
+    padding-left: 35px;
+    padding-right: 35px;
+    /* border: 1px white dashed; */
+    border-radius: 25px;
+    text-decoration: none;
+    color: rgb(182, 182, 182);
+    /* credit to the artists of Celeste */
+    background-color: black;
+    background-image: url("../images/celesteblock.gif");
+    /* filter:brightness(200%); */
+    box-shadow: rgb(173, 173, 173) 0px 0px 4px 1px;
+}
+
+.active_nav{
+    /* background-color: crimson; */
+    /* border: 2px white solid; */
+    font-weight: bold;
+    color: white;
+    box-shadow: white 0px 0px 6px 3px;
+    text-decoration: underline;
+
+}
+
+
+#skip{
+    border: 2px solid black;
+    position:absolute;
+    top:-50px;
+}
+#skip:focus{
+    top:0px;
+}
+
+.thumbnail{
+    height: 400px;
+    width: 400px;
+    margin: auto;
+    display: block;
+    /* border: 3px solid black; */
+}
+
+img, video{
+    padding: 10px;
+    margin: 20px;
+    border-radius: 25px;
+    display: inline-block;
+    margin: auto;
+    height: 200px;
+    width: 200px;
+    transition: transform 0.25s ease;
+}
+
+.divimg img:hover, .divimg img:focus, .divimg video:focus, .divimg video:hover{
+    -webkit-transform:scale(1.5);
+    transform:scale(1.5);
+}
+
+.divimg{
+    /* so wish I could use a flexbox here instead :( */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-column-gap: 50px;
+}
+
+
+@media only screen and (min-width:900px){
+    body{
+        color:black;
+        background-color:#fffc72;
+        padding-bottom:50px;
+        font-family: 'Nunito', sans-serif;
+        font-weight:200;
+        /* credit to the artists of Celeste */
+        /* background-image: url("../images/celeste_golden_ridge.png");
+        background-position: top; */
+        background-repeat:repeat-x;
+    
+    }
+
+    .divimg{
+        /* so wish I could use a flexbox here instead :( */
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto;
+        grid-column-gap: 50px;
+    }
+}
+
+@media screen and (max-width:800px) and (min-width:450px){
+
+    .divimg{
+        /* so wish I could use a flexbox here instead :( */
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: auto;
+    }
+
+    h1{
+        position:fixed;
+        top:0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        left: 0;
+    }
+
+    body{
+        padding-top:50px;
+    }
+}
+
+
+@media only screen and (max-width:450px){
+
+    .divimg{
+        /* so wish I could use a flexbox here instead :( */
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: auto;
+    }
+
+    nav a{
+        padding:5px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.static {
+    display:none;
+}
+
+@media (prefers-reduced-motion: reduce){
+    *{
+        animation: none;
+        transition: none;
+    }
+    .gif{
+        display:none;
+    }
+    nav a{
+        background-color: black;
+        background-image: none;
+        box-shadow: rgb(173, 173, 173) 0px 0px 4px 1px;
+    }
+    img, video{
+        transition: none;
+    }
+    .static{
+        display:block;
+    }
+    
+    
+}
